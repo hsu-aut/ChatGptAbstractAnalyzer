@@ -68,4 +68,7 @@ As a response, provide a list of the used types evalaution, each with the IDs of
             {"role": "user", "content": prompt}
         ],
     )
-    print(evaluation_types.model_dump_json(indent=2))
+
+    # write the output to a json file
+    with open('data/evaluation_types.json', 'w') as f:
+        f.write(evaluation_types.model_dump_json(indent=2))
